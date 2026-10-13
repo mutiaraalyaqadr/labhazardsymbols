@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laboratory Adventure</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-icon">⚗️</div>
+        <div><h1>Laboratory Adventure</h1><p>Petualangan mengenal simbol bahaya</p></div>
+      </div>
+      <div class="player-stats">
+        <span class="pill">⭐ <b id="xp">0</b> XP</span>
+        <span class="pill">🏅 <b id="badge-count">0</b>/9</span>
+      </div>
+    </header>
+
+    <section class="game-layout">
+      <aside class="sidebar panel">
+        <div class="section-heading"><span>📍</span><div><h2>Peta Misi</h2><p>Selesaikan secara berurutan</p></div></div>
+        <div id="mission-list" class="mission-list"></div>
+        <div class="helper-card">
+          <div class="bot">🤖</div>
+          <div><b>Bimo berkata:</b><p>Amati simbolnya, baca petunjuk, lalu pilih jawaban yang paling tepat!</p></div>
+        </div>
+      </aside>
+
+      <section class="main-panel panel">
+        <div class="scene-banner">
+          <div class="scene-copy">
+            <span class="eyebrow" id="mission-number">MISI 1 DARI 9</span>
+            <h2 id="mission-title">The Flame Mystery</h2>
+            <p id="mission-subtitle">Temukan arti simbol pada botol misterius.</p>
+          </div>
+          <div class="scene-decor" aria-hidden="true"><span>🧪</span><span>🌿</span><span>🧫</span></div>
+        </div>
+
+        <div class="lab-scene">
+          <div class="window"><div class="window-sky"></div><div class="window-hill"></div></div>
+          <div class="shelf"><span>🧪</span><span>🧴</span><span>⚗️</span><span>🧫</span></div>
+          <div class="lab-table"></div>
+          <div class="bottle-area">
+            <div class="bottle" id="bottle">
+              <div class="bottle-cap"></div>
+              <div class="bottle-neck"></div>
+              <div class="bottle-body"><div class="hazard-symbol" id="hazard-symbol">🔥</div></div>
+              <div class="bottle-label" id="bottle-label">BAHAYA</div>
+            </div>
+            <div class="sparkle sparkle-one">✦</div><div class="sparkle sparkle-two">✧</div>
+          </div>
+          <div class="scene-floor"><span>🪴</span><span>🧰</span><span>🪴</span></div>
+        </div>
+
+        <div class="mission-content">
+          <div class="lesson-card">
+            <div class="lesson-icon" id="lesson-icon">🔥</div>
+            <div><span class="eyebrow">KENALI SIMBOL</span><h3 id="lesson-heading">Flammable — Mudah Terbakar</h3><p id="lesson-description">Simbol api menandakan bahan yang mudah terbakar. Jauhkan bahan dari sumber api dan panas sesuai petunjuk keselamatan.</p></div>
+          </div>
+
+          <div class="quiz-card">
+            <div class="quiz-top"><h3>🎯 Tantangan Bimo</h3><span id="question-progress">Pertanyaan 1 dari 1</span></div>
+            <p id="question-text">Apa arti simbol api pada botol tersebut?</p>
+            <div id="answer-options" class="answer-options"></div>
+            <div id="feedback" class="feedback" role="status" aria-live="polite"></div>
+            <div class="quiz-actions">
+              <button id="hint-button" class="button button-light">💡 Petunjuk</button>
+              <button id="check-button" class="button button-primary">Periksa Jawaban</button>
+              <button id="next-button" class="button button-primary hidden">Misi Berikutnya →</button>
+            </div>
+            <p id="hint-text" class="hint-text hidden"></p>
+          </div>
+        </div>
+      </section>
+    </section>
+    <footer>Belajar keselamatan laboratorium • Simbol digunakan untuk tujuan edukasi</footer>
+  </main>
+  <div id="completion-modal" class="modal hidden">
+    <div class="modal-card">
+      <div class="modal-trophy">🏆</div>
+      <span class="eyebrow">SELAMAT, JUNIOR SCIENTIST!</span>
+      <h2>Safety Explorer</h2>
+      <p>Kamu sudah menyelesaikan 9 misi simbol bahaya. Sekarang coba ingat kembali arti setiap simbol saat dibutuhkan.</p>
+      <div id="final-badges" class="final-badges"></div>
+      <button id="restart-button" class="button button-primary">Main Lagi</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
